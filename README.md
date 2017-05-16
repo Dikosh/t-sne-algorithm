@@ -1,4 +1,19 @@
 # t-sne-algorithm
+
+Step 1
+
+Stochastic Neighbor Embedding (SNE) starts by converting the high-dimensional Euclidean distances between data points into conditional probabilities that represent similarities. The similarity of datapoint  to datapoint  is the conditional probability,  ,  would pick as its neighbor if neighbors were picked in proportion to their probability density under a Gaussian centered at  . 
+
+For nearby datapoints,  is relatively high, whereas for widely separated datapoints,  will be almost infinitesimal (for reasonable values of the variance of the Gaussian, ). Mathematically, the conditional probability  is given by
+
+
+
+where  is the variance of the Gaussian that is centered on datapoint 
+
+If you are not interested in the math, think about it in this way, the algorithm starts by converting the shortest distance (a straight line) between the points into probability of similarity of points. Where, the similarity between points is: the conditional probability that   would pick  as its neighbor if neighbors were picked in proportion to their probability density under a Gaussian (normal distribution) centered at .
+
+ 
+
 Step 2
 
 For the low-dimensional counterparts  and  of the high-dimensional datapoints  and   it is possible to compute a similar conditional probability, which we denote by .
